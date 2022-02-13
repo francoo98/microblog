@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mi Perfil</title>
+  {% load static %}
+  <link href="{% static 'user/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/user/{{user.id}}">Perfil</a>
+  <div class="topnav-right">
+	<a href="/user/seguidores/{{user.id}}">Seguidores</a>
+	<a href="/user/siguiendo/{{user.id}}">Siguiendo</a>
+	<a href="/user/seguir/{{user.id}}" id="seguir">Seguir</a>
+  </div>
+</div>
+<br>
+  <h3>{{ user.username }}</h3>
+</body>
+</html>

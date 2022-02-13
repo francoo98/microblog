@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Seguidores</title>
+  <link href="/static/user/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/user/seguidores/{{id}}">Seguidores</a>
+  <div class="topnav-right">
+	<a href="/user/{{id}}">Perfil</a>
+  </div>
+</div>
+  <ul>
+  {% for seguido in siguiendo %}
+  <li>
+  <h4>{{ seguido.user.username }}</h4>
+  </li>
+  {% endfor %}
+  </ul>
+</body>
+</html>
