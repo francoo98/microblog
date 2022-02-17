@@ -15,7 +15,7 @@
   <ul>
   {% for seguidor in seguidores %}
   <li>
-  <h4>{{ seguidor.user.username }}</h4>
+  <a href="/user/{{seguidor.user.id}}"><h4>{{ seguidor.user.username }}</h4></a>
   </li>
   {% endfor %}
   </ul>

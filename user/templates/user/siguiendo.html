@@ -15,7 +15,7 @@
   <ul>
   {% for seguido in siguiendo %}
   <li>
-  <h4>{{ seguido.user.username }}</h4>
+  <a href="/user/{{seguido.user.id}}"><h4>{{ seguido.user.username }}</h4></a>
   </li>
   {% endfor %}
   </ul>

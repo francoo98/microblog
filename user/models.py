@@ -11,5 +11,5 @@ class Profile(models.Model):
 
     """class Meta:
         constraints = [
-            CheckConstraint(check=Q(following = (F.Profile.following.from_Profile_id != F.Profile.following.to_profile_id)), name='following_df')
+            CheckConstraint(check=Q(F("following.from_Profile_id") != F("following.to_profile_id")), name='following_df')
         ]"""

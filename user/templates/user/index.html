@@ -8,14 +8,22 @@
 </head>
 <body>
 <div class="topnav">
-  <a class="active" href="/user/{{user.id}}">Perfil</a>
+  <a class="active" href="/user/{{visited_user.id}}">Perfil</a>
   <div class="topnav-right">
-	<a href="/user/seguidores/{{user.id}}">Seguidores</a>
-	<a href="/user/siguiendo/{{user.id}}">Siguiendo</a>
-	<a href="/user/seguir/{{user.id}}" id="seguir">Seguir</a>
+	<a href="/user/seguidores/{{visited_user.id}}">Seguidores</a>
+	<a href="/user/siguiendo/{{visited_user.id}}">Siguiendo</a>
   </div>
 </div>
-<br>
-  <h3>{{ user.username }}</h3>
+
+<div>
+  {% load static %}
+  <img src="{% static 'user/pfp.png' %}" width="200" height="200" alt="profile picture">
+  <strong>{{ visited_user.username }}</strong>
+ {% if current_user.id != visited_user.id %}
+	<a href="/user/seguir/{{visited_user.id}}" id="seguir">Seguir</a>
+  {% endif %}
+
+</div>
+
 </body>
 </html>
